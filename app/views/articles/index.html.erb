@@ -270,6 +270,9 @@
         .Articles-container a {
             color:black;
         }
+        .cta-Container a {
+            color:black;
+        }
     </style>
     <script>
      $(document).ready(function(){
@@ -314,24 +317,18 @@
     <div class="Content"> 
         <div class="cta-Container">
             <h1>The Alpha Blog</h1>
-            <h3>All Articles</h3>
-            <div class="Articles-container"> 
-            <%= link_to 'Create new article', new_article_path %>
+            <h3>Article Collection</h3>
+            
+            <%= link_to 'Create New Article', new_article_path %>
             <%= @articles.each do |article| %>
+            <div class="Articles-container"> 
                  <div class="Title"><p><%= article.title %></p></div>
                  <div class="Description"> <p><%= article.description %> </p></div>
-                 <%= link_to 'Edit', edit_article_path(article) %>
+                 <%= link_to 'Edit', edit_article_path(article) %> |
                  <%= link_to 'Show', article_path(article) %>
+            </div>
             <% end %>
-            </div>
-           <div class="Articles-container"> 
-                 <div class="Title"><p>Title:</p></div>
-            <div class="Description"> <p>Description:</p></div>
-            </div>
-            <div class="Articles-container"> 
-                 <div class="Title"><p>Title:</p></div>
-            <div class="Description"> <p>Description: </p></div>
-            </div>
+            
         </div>
         <div class="Fixedwidthcontent"> </div>
         
