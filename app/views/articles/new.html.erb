@@ -15,6 +15,10 @@
             margin:0;
             padding: 0;
         }
+        body a {
+            color:white;
+            text-decoration:none;
+        }
         .Container {
             width: 100%;
             height: auto;
@@ -250,13 +254,13 @@
 <div class="Container">
     <header>
     <div class="Fixedwidth"> 
-        <h2>The Alpha Blog</h2>
+        <h2><%= link_to 'The Alpha Blog', root_path %></h2>
         <ul> 
             <li>Articles</li>
             <li>Link</li>
             <li class="Active" id="Ac">Actions <strong>&#x25BC;</strong>
                 <ul id="SubMenu">
-                    <li>New Article</li>
+                    <li><%= link_to 'New Article', new_path %></li>
                     <li>Popular Articles</li>
                     <li>Newsletters</li>
                     <hr>
