@@ -16,13 +16,14 @@
             padding: 0;
         }
         body a {
-            color:white;
-            text-decoration:none;
+            text-decoration: none;
+            color: white;
         }
         .Container {
             width: 100%;
             height: auto;
             overflow: auto;
+            overflow-x: hidden;
             padding: 0; margin: 0;
             background: rgba(0,0,0,0.00);
             padding: 0px 0px 0px 0px;
@@ -40,18 +41,19 @@
         }
         footer {
             margin: 0; margin-top: 20px;
-            width: 90%;
+            width: 100%;
             height: 20px;
             background: rgba(0, 106, 164, .0);
             border-bottom: rgba(247, 115, 0, 0.0) 2px solid;
             text-align: center;
-            border-top: rgba(0,0,0,1.0) thin solid;;
+            border-top: rgba(0,0,0,0.10) thin solid;;
             padding: 20px 50px;
             font-family: sans-serif; color: white;
             font-weight: 100;
             margin: 0 auto;
+            margin-top: 50px;
             color: black;
-            float:left;
+            float: left;
         }
         footer small {
             float: left;
@@ -83,7 +85,10 @@
         }
         #Ac {
             cursor: pointer;
-            
+        }
+        .AcHover {
+            background: rgba(255,255,255,0.10);
+            height: 35px;
         }
         #SubMenu {
             margin: 0;
@@ -106,6 +111,9 @@
             border-left: rgba(247, 115, 0, 1.0) 0px solid;
             color: black;
         }
+        #signIn {
+            float: right;
+        }
         #SubMenu li {
             list-style: none;
             float: none;
@@ -117,10 +125,6 @@
             font-family: sans-serif;
             font-weight: 300;
             color: white;
-        }
-        #SubMenu li a {
-            text-decoration:none;
-            color:white;
         }
         .Fixedwidth {
             width: 100%;
@@ -154,23 +158,22 @@
         }
         .Content {
             width: 100%;
-            height: 600px;
+            height: auto;
             overflow: auto;
             text-align: center;
             float: left;
             z-index: -1;
-            background: rgba(0,0,0,0.80);
+            background: rgba(0,0,0,0.00);
             
         } 
         .Fixedwidthcontent {
             width: 100%;
-            height: 600px;
+            height: auto;
             overflow: auto;
             margin:  0 auto;
             background: rgba(255,255,255, 0.0);
             padding: 10px 20px;
             box-sizing: border-box;
-            background-image: url(https://images.unsplash.com/photo-1446797376004-9352dfc9f789?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=69456cfc0f4d312538621db6007ea1fc);
             background-size: cover;
             background-position: 0px -100px;
             opacity: .3;
@@ -190,46 +193,82 @@
             margin-left: 20px;
         }
         .cta-Container {
-            width: 60%;
-            height: 400px;
-            background:;
+            width: 90%;
+            height: auto;
+            overflow: auto;
+            background:rgba(0,0,0,0.05);
+            border-radius: 20px;
             z-index: +999;
             margin: 0 auto;
-            margin-top: 100px;
+            margin-top: 50px;
             font-family: sans-serif;
-            color: aliceblue;
+            color: black;
+            padding-bottom: 50px;
         }
-        .cta-Container h1 {
-            font-weight: 500;
-            letter-spacing: 5px;
-            font-size: 36px;
-        }
-        .cta-Container h3 {
+        .cta-Container label {
+            width: 100%;
+            font-size: 22px;
             float: left;
-            width: 33%;
-            font-weight: 400;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
-        .cta-Container p {
-            line-height: 150%;
-            letter-spacing: 1px;
+        
+        .cta-Container  h1, label, h3 {
+            color: rgba(0,0,0, 0.60);
+        }
+        .cta-Container input {
+            float: left;
+            width: 60%;
+            margin-left: 20%;
+            height: 30px;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+        }
+        .cta-Container textarea {
+            width: 80%;
+            height: 200px;
+            margin-left: 10%;
+            float: left;
             font-weight: 100;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 5px 10px;
         }
         #JoinNow {
-            width: 150px;
-            height: 40px;
+            width: 15%;
+            height: 35px;
             border: none;
             padding: none;
-            background: white;
+            background: rgba(0,0,0,0.05);
+            float: left;
             border-radius:2px;
             font-size: 1em;
-        
+            margin-left: 42.5%;
+            margin-top:20px;
+            margin-bottom: 20px;
         }
-         #signIn {
-            float: right;
+        .Title {
+            width: 100%;
+            height: auto;
         }
-        .AcHover {
-            background: rgba(255,255,255,0.10);
-            height: 35px;
+        .Description {
+            width: 100%;
+            height: auto;
+        }
+        .Articles-container {
+            width: 80%;
+            height: auto;
+            overflow: auto;
+            background: rgba(255,255,255,0.70);
+            margin: 0 auto; 
+            margin-top: 20px;
+            border-radius: 10px 0px 10px 0px;
+            border-bottom: rgba(247, 115, 0, 1.0) 2px solid;
+            border-top: rgba(247, 115, 0, 1.0) 2px solid;
+        }
+        .Articles-container a {
+            color:black;
         }
     </style>
     <script>
@@ -275,10 +314,24 @@
     <div class="Content"> 
         <div class="cta-Container">
             <h1>The Alpha Blog</h1>
-            <h3>Read</h3><h3>Collect</h3><h3>Write</h3>
-            <p>The Alpha Blog is a place where writers from all walks of life and creativity come together to publish and read great content that can't be found anywhere else. Its free and easy to JOIN. Sign up now!</p>
-            <br>
-            <button type="submit" value="Submit" id="JoinNow">Join Now</button>
+            <h3>All Articles</h3>
+            <div class="Articles-container"> 
+            <%= link_to 'Create new article', new_article_path %>
+            <%= @articles.each do |article| %>
+                 <div class="Title"><p><%= article.title %></p></div>
+                 <div class="Description"> <p><%= article.description %> </p></div>
+                 <%= link_to 'Edit', edit_article_path(article) %>
+                 <%= link_to 'Show', article_path(article) %>
+            <% end %>
+            </div>
+           <div class="Articles-container"> 
+                 <div class="Title"><p>Title:</p></div>
+            <div class="Description"> <p>Description:</p></div>
+            </div>
+            <div class="Articles-container"> 
+                 <div class="Title"><p>Title:</p></div>
+            <div class="Description"> <p>Description: </p></div>
+            </div>
         </div>
         <div class="Fixedwidthcontent"> </div>
         

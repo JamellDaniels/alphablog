@@ -5,4 +5,7 @@ class IndexController < ApplicationController
     def about
         
     end
+    def all
+        
+    end
 end

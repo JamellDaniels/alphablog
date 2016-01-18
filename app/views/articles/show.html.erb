@@ -250,13 +250,18 @@
             width: 100%;
             height: auto;
         }
+        #signIn {
+            float: right;
+        }
     </style>
     <script>
      $(document).ready(function(){
          $('#Ac').click(function(){
+            $('#Ac').toggleClass('AcHover')
             $('#SubMenu').slideDown(400); 
          });
          $('.Content').click(function(){
+            $('#Ac').toggleClass('AcHover')
             $('#SubMenu').slideUp(400); 
          });
      });
@@ -281,6 +286,10 @@
                 </ul>
             </li>
         </ul>
+        <ul id="signIn">
+            <li>Sign In</li>
+            <li>Sign Up</li>
+        </ul>
         <input type="text" placeholder="Search" name="search" id="search">
         <button type="submit" value="Submit" id="submit">Submit</button>
     </div>
@@ -291,7 +300,11 @@
             <h3><%= flash[:notice] %></h3>
             <div class="Title"><p>Title: <%= @article.title %></p></div>
             <div class="Description"> <p>Description: <%= @article.description %></p></div>
+            
+            
+            <%= link_to "Edit", edit_article_path(@article) %> | <%= link_to "Back to article listings", articles_path %>
         </div>
+        
         <div class="Fixedwidthcontent"> </div>
         
     </div>

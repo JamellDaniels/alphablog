@@ -63,13 +63,13 @@
             height: auto;
             overflow: auto;
             float: left;
-            padding: 0;
+            padding: 0px 0 0 0;
         }
         .Fixedwidth ul li {
             list-style: none;
             float: left;
             margin-left: 10px;
-            padding: 10px 10px;
+            padding: 16px 10px 0  10px;
             font-size: 16px;
             font-family: sans-serif;
             font-weight: 300;
@@ -90,7 +90,8 @@
         #SubMenu {
             margin: 0;
             position: absolute;
-            top: 60px; 
+            top: 53px;
+            margin-left: -10px;
             height: auto;
             cursor: pointer;
             overflow: auto;
@@ -105,6 +106,7 @@
             z-index: +999;
             border-bottom: rgba(247, 115, 0, 1.0) 2px solid;
             border-left: rgba(247, 115, 0, 1.0) 0px solid;
+            color: black;
         }
         #SubMenu li {
             list-style: none;
@@ -124,7 +126,7 @@
             overflow: auto;
             margin: 0 auto;
             background: rgba(0,0,0, 0.0);
-            padding: 10px 0;
+            padding: 0 0 0 0;
         }
         .Fixedwidth input {
             width: 150px;
@@ -132,7 +134,7 @@
         }
         #search {
             margin-left: 10px;
-            margin-top: 5px;
+            margin-top: 10px; margin-bottom: 10px;
             border: none;
             padding: 10px;
             box-sizing: border-box;
@@ -181,7 +183,7 @@
             margin: 0;
             color: aliceblue;
             font-weight: 400;
-            padding-top: 3px;
+            padding-top: 10px;
             margin-left: 20px;
         }
         .cta-Container {
@@ -239,13 +241,22 @@
             margin-top:20px;
             margin-bottom: 20px;
         }
+        #signIn {
+            float: right;
+        }
+        .AcHover {
+            background: rgba(255,255,255,0.10);
+            height: 35px;
+        }
     </style>
     <script>
      $(document).ready(function(){
          $('#Ac').click(function(){
-            $('#SubMenu').slideDown(400); 
+            $('#Ac').toggleClass('AcHover')
+            $('#SubMenu').slideToggle(400); 
          });
          $('.Content').click(function(){
+            $('#Ac').toggleClass('AcHover')
             $('#SubMenu').slideUp(400); 
          });
      });
@@ -261,7 +272,7 @@
             <li class="Active" id="Ac">Actions <strong>&#x25BC;</strong>
                 <ul id="SubMenu">
                     <li><%= link_to 'New Article', new_path %></li>
-                    <li>Popular Articles</li>
+                    <li><%= link_to 'Popular Articles', all_path %></li>
                     <li>Newsletters</li>
                     <hr>
                     <li>Separated Link</li>
@@ -269,6 +280,10 @@
                     <li>Another Link</li>
                 </ul>
             </li>
+        </ul>
+        <ul id="signIn">
+            <li>Sign In</li>
+            <li>Sign Up</li>
         </ul>
         <input type="text" placeholder="Search" name="search" id="search">
         <button type="submit" value="Submit" id="submit">Submit</button>
@@ -299,6 +314,8 @@
         <%= f.submit %>
     </p>
 <% end %>
+
+<%= link_to "Back to article listings", articles_path %>
         </div>
         <div class="Fixedwidthcontent"> </div>
         
